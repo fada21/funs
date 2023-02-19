@@ -15,6 +15,4 @@ fun main(args: Array<String>) {
     val one = number.transformIf(::isEven) { times(2) }
     val onePlain = if (isEven(number)) number.times(2) else 1
     val onePlainSimple = if (number % 2 == 0) number * 2 else 1
-
-    println("Think if that is possibly useful")
 }
