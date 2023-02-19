@@ -15,4 +15,15 @@ fun main(args: Array<String>) {
     val one = number.transformIf(::isEven) { times(2) }
     val onePlain = if (isEven(number)) number.times(2) else 1
     val onePlainSimple = if (number % 2 == 0) number * 2 else 1
+
+
+    val magazine = listOf(null, null, null, null, null, bullet)
+    val m1 = magazine.toMutableList()
+    val retries4 = retry(4, isOk = { it is bullet }, body = { m1.removeFirstOrNull() })
+    println("Did hit bullet on 5th attempt: $retries4")
+    val m2 = magazine.toMutableList()
+    val retries5 = retry(5, isOk = { it is bullet }, body = { m2.removeFirstOrNull() })
+    println("Did hit bullet on 6th attempt: $retries5")
 }
+
+object bullet
